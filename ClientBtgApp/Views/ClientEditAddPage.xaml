@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientBtgApp.Views.ClientEditAddPage"
+             xmlns:viewModel="clr-namespace:ClientBtgApp.ViewModels" 
+             xmlns:models="clr-namespace:ClientBtgApp.Base.Models"
+             Title="{Binding TitlePage}">
+
+    <Grid RowDefinitions="*, Auto"
+          MaximumWidthRequest="500"
+          MinimumWidthRequest="350">
+
+        <VerticalStackLayout>
+            <Border BackgroundColor="White">
+                <Grid ColumnDefinitions="Auto, *"
+                      Margin="10">
+                    <Label Grid.Column="0"
+                       Text="Name:"
+                       FontAttributes="Bold" 
+                       TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           TextColor="Black"
+                           Placeholder="Write name"
+                           Text="{Binding Client.Name}"/>
+                </Grid>
+            </Border>
+            <Border BackgroundColor="White">
+                <Grid ColumnDefinitions="Auto, *"
+                      Margin="10">
+                    <Label Grid.Column="0"
+                           Text="Lastname:"
+                           FontAttributes="Bold" 
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           TextColor="Black"
+                           Placeholder="Write lastname"
+                           Text="{Binding Client.Lastname}"/>  
+                </Grid>
+            </Border>
+            <Border BackgroundColor="White">
+                <Grid ColumnDefinitions="Auto, *"
+                      Margin="10">
+                    <Label Grid.Column="0"
+                           Text="Age:"
+                           FontAttributes="Bold" 
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           TextColor="Black"
+                           Placeholder="Write age"
+                           MaxLength="3"
+                           Text="{Binding Age}"/>
+                </Grid>
+            </Border>
+            <Border BackgroundColor="White">
+                <Grid ColumnDefinitions="Auto, *"
+                      Margin="10">
+                    <Label Grid.Column="0"
+                           Text="Address:"
+                           FontAttributes="Bold" 
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           TextColor="Black"
+                           Placeholder="Write address"
+                           Text="{Binding Client.Address}"/>
+                </Grid>
+            </Border>
+            <Border BackgroundColor="OrangeRed"
+                    Margin="0,20,0,0"
+                    IsVisible="{Binding FormsInvalid}">
+                <Grid RowDefinitions="Auto, *"
+                        Margin="10">
+                    <Label Grid.Row="0"
+                           Text="Error on save"
+                           FontAttributes="Bold" 
+                           TextColor="White"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="1"
+                           Text="{Binding Error}"
+                           FontAttributes="Bold" 
+                           TextColor="White"
+                           VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,*">
+            <Button Grid.Column="0"
+                    Text="Delete"
+                    CornerRadius="10" 
+                    Margin="20"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    IsVisible="{Binding Edit}"
+                    Command="{Binding RemoveClientCommand}"/>
+
+            <Button Grid.Column="1"
+                    Grid.ColumnSpan="1"
+                    Text="Save"
+                    CornerRadius="10" 
+                    Margin="20"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    Command="{Binding SaveClientCommand}">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button"
+                                 Binding="{Binding Edit}"
+                                 Value="false">
+                        <Setter Property="Grid.ColumnSpan" Value="2" />
+                        <Setter Property="Grid.Column" Value="0" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+        
+    </Grid>
+</ContentPage>

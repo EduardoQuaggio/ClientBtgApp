@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientBtgApp.Views.ClientListPage"
+             xmlns:viewModel="clr-namespace:ClientBtgApp.ViewModels" 
+             xmlns:models="clr-namespace:ClientBtgApp.Base.Models" 
+             Title="Clients">
+
+    <Grid RowDefinitions="*, Auto"
+          MaximumWidthRequest="500"
+          MinimumWidthRequest="350">
+        <VerticalStackLayout Grid.Row="0"
+                             Grid.RowSpan="2"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             IsVisible="{Binding IsEmpty}">
+            <Label Text="No registered client" TextColor="LightGray" FontSize="Medium"/>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="0"
+                        ItemsSource="{Binding Clients}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Client">
+                    <Border BackgroundColor="White">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenAddEditClientCommand, Source={RelativeSource AncestorType={x:Type viewModel:ClientListViewModel}}}"
+                                                  CommandParameter="{Binding .}"/>
+                        </Border.GestureRecognizers>
+                        <Grid RowDefinitions="Auto, Auto"
+                              ColumnDefinitions="*, *"
+                              Margin="10">
+                            <Label Grid.Row="0"
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold" 
+                                   TextColor="Black"/>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding Age} "
+                                   TextColor="Black"/>
+
+                            <Label Grid.Row="1"
+                                   Text="{Binding Lastname}"
+                                   TextColor="Black"/>
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Address}"
+                                   TextColor="Black"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1"  
+                Text="Add Client"
+                CornerRadius="10" 
+                Margin="20"
+                FontAttributes="Bold"
+                TextColor="White" 
+                Command="{Binding OpenAddEditClientCommand}"/>
+    </Grid>
+</ContentPage>
