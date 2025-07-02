@@ -2,12 +2,14 @@
 Primeiro Teste BTG (Lista de clientes)
   - Solicitação foi criar um aplicação desktop para gerenciar um lista de clientes com persistência de dados local.
 
-![EmptyView](https://github.com/user-attachments/assets/24a38794-c37d-424f-919c-93a668c639ad)
-![FullScream](https://github.com/user-attachments/assets/f6fb70f3-b5d6-4047-9e58-dd78ae09228a)
-![AddPage](https://github.com/user-attachments/assets/e45ee429-593a-4ff2-818b-c62c7dc308cd)
-![EditAddPage](https://github.com/user-attachments/assets/67713af6-8412-4f2e-8e33-2aa0c5b24c4c)
-![ListClient](https://github.com/user-attachments/assets/49c76abd-2dd0-4ff3-a1cd-edff6fa3c0b1)
-![Error](https://github.com/user-attachments/assets/4f3a600f-356b-4d6c-a229-b0c00cc99940)
-![PopupConfirmeDelete](https://github.com/user-attachments/assets/7519c5d2-60f7-486b-8c7d-8ecc62f4e953)
-![SuccessDelete](https://github.com/user-attachments/assets/846202b6-c77b-4d3e-a187-77c8eea7aa30)
-![Captura de tela 2025-07-02 105720](https://github.com/user-attachments/assets/cde6c8e8-6cb6-424e-9f2a-4d459832380d)
+
+![EmptyView](https://github.com/user-attachments/assets/96efa37b-7445-4d88-9290-a92ab71142f5)
+![FullScream](https://github.com/user-attachments/assets/df2cc98b-7ef8-4c7e-9473-f3cd92d30183)
+![AddPage](https://github.com/user-attachments/assets/4d6b1225-1070-4ed9-8709-d3e153795c88)
+![EditAddPage](https://github.com/user-attachments/assets/a70d540f-4a7d-44c5-829d-5788e33f2d33)
+![ListClient](https://github.com/user-attachments/assets/624343cc-cd96-4ad4-8173-2c7b040cfd74)
+![Error](https://github.com/user-attachments/assets/6b918bab-8b49-475c-9c89-cac2d8915b69)
+![PopupConfirmeDelete](https://github.com/user-attachments/assets/36d0ef7d-9f6f-4b110a49-5566-492f-b974-ae48c638fc57)
+![SucessEdit](https://github.com/user-attachments/assets4-b7a3-bd62570ea915)
+![SuccessDelete](https://github.com/user-attachments/assets/e63/49618d32-1060-45f4-b1f5-93ef6727b384)
+![SucessAdd](https://github.com/user-attachments/assets/dfa34cf0-63ed-4d4d-bef3-ad80111555f7)
